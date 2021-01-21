@@ -1,0 +1,13 @@
+.board-card {
+    border-radius: 10px;
+    width: calc(25% - 15px);
+    height: 180px;
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, .6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    float: left;
+}
