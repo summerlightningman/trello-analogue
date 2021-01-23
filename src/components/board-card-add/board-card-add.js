@@ -1,30 +1,35 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import Form from 'react-bootstrap/Form';
 import {Button, ButtonGroup} from 'react-bootstrap';
-import './board-add.css';
+import {connect} from 'react-redux';
+import {addBoard} from "../../redux/actions";
 
-const BoardAdd = ({toAddBoard}) => {
+import './board-card-add.css';
+
+const BoardCardAdd = ({addBoard, boards}) => {
     const [isAddMode, setMode] = useState(false);
     const [boardName, setBoardName] = useState('');
 
-    const cancelAdd = () => {
+    const cancelAdd = () => setMode(!isAddMode);
+
+    const handleChange = e => setBoardName(e.target.value);
+
+    const add = () => {
+        const newId = boards.length + 1;
+
+        const board = {
+            name: boardName || 'New board',
+            key: newId,
+            id: newId
+        };
+
+        addBoard(board);
         setMode(!isAddMode);
-    };
-
-    const handleChange = (e) => {
-        setBoardName(e.target.value)
-    };
-
-    const addBoard = () => {
-        const result = toAddBoard(boardName);
-        if (result) {
-            setMode(!isAddMode);
-            setBoardName('');
-        }
+        setBoardName('');
     };
 
     const handleKeyUp = ({code: key}) => {
-        if (key === 'Enter') addBoard();
+        if (key === 'Enter') add();
     };
 
     // component views
@@ -42,7 +47,7 @@ const BoardAdd = ({toAddBoard}) => {
                       onKeyUp={handleKeyUp}
         />
         <ButtonGroup>
-            <Button variant="link" onClick={addBoard}>Add</Button>
+            <Button variant="link" onClick={add}>Add</Button>
             <Button variant="link" onClick={cancelAdd}>Cancel</Button>
         </ButtonGroup>
     </div>;
@@ -50,4 +55,5 @@ const BoardAdd = ({toAddBoard}) => {
     return isAddMode ? input : button
 }
 
-export default BoardAdd;
+
+export default connect(state => state.board, {addBoard})(BoardCardAdd);
