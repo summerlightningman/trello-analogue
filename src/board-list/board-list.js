@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import BoardAdd from "../board-add/board-add";
-import BoardCard from "../board-card/board-card";
+import BoardAdd from '../board-add/board-add';
+import BoardCard from '../board-card/board-card';
 
 import './board-list.css';
 

@@ -7,7 +7,7 @@ const BoardAdd = ({toAddBoard}) => {
     const [isAddMode, setMode] = useState(false);
     const [boardName, setBoardName] = useState('');
 
-    const swapMode = () => {
+    const cancelAdd = () => {
         setMode(!isAddMode);
     };
 
@@ -15,21 +15,21 @@ const BoardAdd = ({toAddBoard}) => {
         setBoardName(e.target.value)
     };
 
-    const handleAdd = () => {
+    const addBoard = () => {
         const result = toAddBoard(boardName);
-        if (result){
+        if (result) {
             setMode(!isAddMode);
             setBoardName('');
         }
     };
 
     const handleKeyUp = ({code: key}) => {
-        if (key === 'Enter'){
-            handleAdd();
-        }
-    }
+        if (key === 'Enter') addBoard();
+    };
 
-    const button = <div className="board-card add button" onClick={swapMode}>
+    // component views
+
+    const button = <div className="board-card add button" onClick={cancelAdd}>
         <h3>Add new board</h3>
     </div>;
 
@@ -42,11 +42,9 @@ const BoardAdd = ({toAddBoard}) => {
                       onKeyUp={handleKeyUp}
         />
         <ButtonGroup>
-            <Button variant="link" onClick={handleAdd}>Add</Button>
-            <Button variant="link" onClick={swapMode}>Cancel</Button>
+            <Button variant="link" onClick={addBoard}>Add</Button>
+            <Button variant="link" onClick={cancelAdd}>Cancel</Button>
         </ButtonGroup>
-
-
     </div>;
 
     return isAddMode ? input : button
