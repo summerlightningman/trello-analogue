@@ -1,6 +1,8 @@
 import './App.css';
 import {Container} from "react-bootstrap";
 import BoardList from "./board-list/board-list";
+import Board from "./board/board";
+import {Route, BrowserRouter as Router} from "react-router-dom";
 
 function App() {
     const githubLink = 'https://github.com/summerlightningman';
@@ -10,7 +12,11 @@ function App() {
             <h1>My Trello Analogue</h1>
             <h6>For my <a href={githubLink}>GitHub-repository</a></h6>
             <hr/>
-            <BoardList/>
+            <Router>
+                <Route path="/" exact component={BoardList}/>
+                <Route path="/board" component={Board}/>
+                {/*<BoardList/>*/}
+            </Router>
         </Container>
     );
 }
