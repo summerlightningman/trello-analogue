@@ -8,19 +8,19 @@ const BoardList = () => {
     const [boards, setBoards] = useState([]);
 
     const toAddBoard = (name) => {
-        const args = {
+        const board = {
             name: name || 'New board',
-            key: boards.length
+            key: boards.length,
+            id: boards.length
         };
 
-        const newBoard = <BoardCard {...args} />;
-        setBoards([newBoard].concat(boards));
+        setBoards([board].concat(boards));
         return true
     }
 
     return (
         <>
-            {boards}
+            {boards.map(boardArgs => <BoardCard {...boardArgs}/>)}
             <BoardAdd toAddBoard={toAddBoard}/>
         </>
     )

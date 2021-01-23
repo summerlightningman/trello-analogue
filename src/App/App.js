@@ -1,7 +1,7 @@
 import './App.css';
 import {Container} from "react-bootstrap";
-import BoardList from "./board-list/board-list";
-import Board from "./board/board";
+import BoardList from "../board-list/board-list";
+import Board from "../board/board";
 import {Route, BrowserRouter as Router} from "react-router-dom";
 
 function App() {
@@ -14,8 +14,7 @@ function App() {
             <hr/>
             <Router>
                 <Route path="/" exact component={BoardList}/>
-                <Route path="/board" component={Board}/>
-                {/*<BoardList/>*/}
+                <Route path="/board/:id" component={Board}/>
             </Router>
         </Container>
     );
