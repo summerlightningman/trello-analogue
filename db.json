@@ -1,0 +1,28 @@
+{
+  "boards": [
+    {
+      "board_id": 0,
+      "name": "HEEEEY"
+    },
+    {
+      "board_id": 1,
+      "name": "THAT'S"
+    },
+    {
+      "board_id": 2,
+      "name": "PRETTY"
+    },
+    {
+      "board_id": 3,
+      "name": "GOOOOOOOD!!"
+    },
+    {
+      "board_id": 4,
+      "name": "YYYEEEEEAAAAAHHH"
+    },
+    {
+      "board_id": 5,
+      "name": "BIIITTTTCCCCHH"
+    }
+  ]
+}
