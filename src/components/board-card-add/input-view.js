@@ -1,13 +1,11 @@
 import Form from "react-bootstrap/Form";
 import {useState} from 'react';
 import {Button, ButtonGroup} from "react-bootstrap";
-import {connect} from 'react-redux';
-import {addBoard, swapAddMode} from "../../redux/actions";
 
 const InputView = ({boards, swapAddMode, addBoard}) => {
     const [name, setName] = useState('');
 
-    const handleChange = (e) => setName(e.target.value);
+    const handleChange = e => setName(e.target.value);
     const handleKeyUp = ({code: key}) => (key === 'Enter') && add();
 
     const add = () => {
@@ -39,4 +37,4 @@ const InputView = ({boards, swapAddMode, addBoard}) => {
     </div>)
 };
 
-export default connect(state => state.board, {swapAddMode, addBoard})(InputView);
+export default InputView;

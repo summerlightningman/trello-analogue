@@ -1,8 +1,9 @@
-import {ADD_BOARD, SWAP_ADD_MODE} from "./types";
+import {ADD_BOARD, CHANGE_HEADER, SWAP_ADD_MODE} from "./types";
 
 const initialState = {
     boards: [],
-    isAddMode: false
+    isAddMode: false,
+    header: 'My Trello Analogue'
 };
 
 export const boardReducer = (state = initialState, action) => {
