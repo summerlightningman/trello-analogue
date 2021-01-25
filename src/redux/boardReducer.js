@@ -1,4 +1,4 @@
-import {ADD_BOARD, CHANGE_HEADER, SWAP_ADD_MODE} from "./types";
+import {ADD_BOARD, DELETE_BOARD, SWAP_ADD_MODE} from "./types";
 
 const initialState = {
     boards: [],
@@ -12,6 +12,8 @@ export const boardReducer = (state = initialState, action) => {
             return {...state, boards: [action.payload, ...state.boards]}
         case SWAP_ADD_MODE:
             return {...state, isAddMode: !state.isAddMode}
+        case DELETE_BOARD:
+            return {...state, boards: state.boards.filter(board => board.id !== action.payload)}
         default:
             return state
     }

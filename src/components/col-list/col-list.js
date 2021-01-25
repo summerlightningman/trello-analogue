@@ -1,6 +1,6 @@
 const ColList = () => {
     return (
-        <div>
+        <div className="col-list">
 
         </div>
     )

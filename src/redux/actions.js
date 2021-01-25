@@ -1,4 +1,4 @@
-import {ADD_BOARD, SWAP_ADD_MODE, CHANGE_HEADER} from "./types";
+import {ADD_BOARD, SWAP_ADD_MODE, DELETE_BOARD} from "./types";
 
 export const addBoard = board => {
     return {
@@ -12,3 +12,10 @@ export const swapAddMode = () => {
         type: SWAP_ADD_MODE
     }
 };
+
+export const deleteBoard = id => {
+    return {
+        type: DELETE_BOARD,
+        payload: id
+    }
+}
