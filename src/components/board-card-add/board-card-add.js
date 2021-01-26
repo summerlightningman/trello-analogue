@@ -3,10 +3,11 @@ import {connect} from 'react-redux';
 import './board-card-add.css';
 import ButtonView from "./button-view";
 import InputView from "./input-view";
-import {addBoard, swapAddMode} from "../../redux/actions";
+import {swapAddMode} from "../../redux/actions";
 
-const BoardCardAdd = ({isAddMode, swapAddMode, boards, addBoard}) => isAddMode
-    ? <InputView boards={boards} swapAddMode={swapAddMode} addBoard={addBoard}/>
+const BoardCardAdd = ({isAddMode, swapAddMode, toRefresh}) =>
+    isAddMode
+    ? <InputView swapAddMode={swapAddMode} toRefresh={toRefresh}/>
     : <ButtonView swapAddMode={swapAddMode}/>;
 
-export default connect(state => state.board, {swapAddMode, addBoard})(BoardCardAdd);
+export default connect(state => state.board, {swapAddMode})(BoardCardAdd);

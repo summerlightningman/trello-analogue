@@ -1,28 +1,44 @@
 {
   "boards": [
     {
-      "board_id": 0,
-      "name": "HEEEEY"
+      "id": 0,
+      "name": "HEEEEY",
+      "cols": []
     },
     {
-      "board_id": 1,
-      "name": "THAT'S"
+      "id": 1,
+      "name": "THAT'S",
+      "cols": []
     },
     {
-      "board_id": 2,
-      "name": "PRETTY"
+      "id": 2,
+      "name": "PRETTY",
+      "cols": []
     },
     {
-      "board_id": 3,
-      "name": "GOOOOOOOD!!"
+      "id": 3,
+      "name": "GOOOOOOOD!!",
+      "cols": []
     },
     {
-      "board_id": 4,
-      "name": "YYYEEEEEAAAAAHHH"
+      "id": 4,
+      "name": "YYYEEEEEAAAAAHHH",
+      "cols": []
     },
     {
-      "board_id": 5,
-      "name": "BIIITTTTCCCCHH"
+      "id": 5,
+      "name": "BIIITTTTCCCCHH",
+      "cols": []
+    },
+    {
+      "name": "NICE",
+      "cols": [],
+      "id": 6
+    },
+    {
+      "name": "I have done this",
+      "cols": [],
+      "id": 7
     }
   ]
 }

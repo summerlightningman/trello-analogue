@@ -1,16 +1,22 @@
 import {useHistory} from 'react-router-dom';
 import {useState} from 'react';
 import {Button} from 'react-bootstrap';
+import {BACKEND_URL} from "../../connection";
 import './board-card.css';
 
-const BoardCard = ({name, id, deleteBoard}) => {
+const BoardCard = ({name, id, toRefresh}) => {
     const [isHidden, setHidden] = useState(true);
     const history = useHistory();
 
     const handleClick = () => history.push('/board/' + id);
     const handleDelete = e => {
         e.stopPropagation();
-        deleteBoard(id);
+        fetch(BACKEND_URL + '/boards/' + id, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(toRefresh);
     };
     const handleMouseEnter = () => setHidden(false);
     const handleMouseLeave = () => setHidden(true);

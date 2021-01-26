@@ -1,23 +1,28 @@
 import Form from "react-bootstrap/Form";
 import {useState} from 'react';
 import {Button, ButtonGroup} from "react-bootstrap";
+import {BACKEND_URL} from "../../connection";
 
-const InputView = ({boards, swapAddMode, addBoard}) => {
+const InputView = ({swapAddMode, toRefresh}) => {
     const [name, setName] = useState('');
 
     const handleChange = e => setName(e.target.value);
     const handleKeyUp = ({code: key}) => (key === 'Enter') && add();
 
     const add = () => {
-        const newId = boards.length;
 
         const board = {
             name: name || 'New board',
-            key: newId,
-            id: newId
+            cols: []
         };
 
-        addBoard(board);
+        fetch(BACKEND_URL + '/boards', {
+            method: 'POST',
+            body: JSON.stringify(board),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(toRefresh);
         swapAddMode();
         setName('');
     };
