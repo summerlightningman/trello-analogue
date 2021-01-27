@@ -1,5 +1,5 @@
 My lite analogue of <a href="https://trello.com">Trello</a> as project for my portfolio 🌝
-<u>Not finished project</u>
+<p>Not finished project</p>
 
 <hr>
 
