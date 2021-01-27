@@ -37,7 +37,16 @@
     },
     {
       "name": "I have done this",
-      "cols": [],
+      "cols": [
+        {
+          "name": "My first col",
+          "cards": []
+        },
+        {
+          "name": "My second col",
+          "cards": []
+        }
+      ],
       "id": 7
     }
   ]

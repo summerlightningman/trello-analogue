@@ -1,6 +1,10 @@
-const Col = () => {
+import './col.css';
+
+const Col = ({name}) => {
     return (
-        <div></div>
+        <div className="column">
+            {name}
+        </div>
     )
 };
 

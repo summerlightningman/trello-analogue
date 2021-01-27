@@ -27,13 +27,14 @@ const InputView = ({swapAddMode, toRefresh}) => {
         setName('');
     };
 
-    return (<div className="board-card add input">
+    return (<div className="board-card card-add card-input">
         <h3>Board name</h3>
-        <Form.Control type="text"
-                      value={name}
-                      onChange={handleChange}
-                      placeholder="New board"
-                      onKeyUp={handleKeyUp}
+        <Form.Control
+            type="text"
+            value={name}
+            onChange={handleChange}
+            placeholder="New board"
+            onKeyUp={handleKeyUp}
         />
         <ButtonGroup>
             <Button variant="link" onClick={add}>Add</Button>

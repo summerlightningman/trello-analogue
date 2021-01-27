@@ -1,5 +1,5 @@
 const ButtonView = ({swapAddMode}) => {
-    return (<div className="board-card add button" onClick={swapAddMode}>
+    return (<div className="board-card card-add card-button" onClick={swapAddMode}>
         <h3>Add new board</h3>
     </div>)
 };

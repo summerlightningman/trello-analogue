@@ -1,0 +1,13 @@
+.column-add {
+    background: #4cff8b;
+    color: #038c00;
+    height: 80px;
+}
+
+.column-input {
+
+}
+
+.column-button {
+    cursor: pointer;
+}

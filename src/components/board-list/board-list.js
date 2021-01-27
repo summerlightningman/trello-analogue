@@ -9,12 +9,12 @@ import './board-list.css';
 const BoardList = () => {
     const [boards, setBoards] = useState([]);
 
-    const refreshList = () => fetch('http://localhost:5000/boards').then(resp => resp.json()).then(setBoards);
+    const refreshList = () =>
+        fetch('http://localhost:5000/boards')
+            .then(resp => resp.json())
+            .then(boards => setBoards(boards.slice().reverse()));
 
-    useEffect(() => {
-       refreshList()
-    }, []);
-
+    useEffect(refreshList, []);
 
     return (
         <div className="board-list">

@@ -1,11 +1,11 @@
-.add {
+.card-add {
     background: aquamarine;
 }
 
-.button {
+.card-button {
     cursor: pointer;
 }
 
-.input {
+.card-input {
     padding: 25px;
 }
